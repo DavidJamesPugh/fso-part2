@@ -1,0 +1,101 @@
+{
+  "persons": [
+    {
+      "name": "Arto Hellas",
+      "number": "040-123456",
+      "id": "1"
+    },
+    {
+      "name": "Ada Lovelace",
+      "number": "39-44-5323523",
+      "id": "2"
+    },
+    {
+      "name": "Dan Abramov",
+      "number": "12-43-234345",
+      "id": "3"
+    },
+    {
+      "name": "Mary Poppendieck",
+      "number": "39-23-6423122",
+      "id": "4"
+    },
+    {
+      "id": "55e1",
+      "number": "111",
+      "name": "david"
+    },
+    {
+      "id": "5c5d",
+      "number": "44885",
+      "name": "greg"
+    },
+    {
+      "id": "d162",
+      "number": "485785",
+      "name": "davo"
+    },
+    {
+      "id": "a9e7",
+      "number": "231",
+      "name": "test"
+    },
+    {
+      "id": "7e8a",
+      "number": "323131",
+      "name": "greg2"
+    },
+    {
+      "id": "f2d0",
+      "number": "999",
+      "name": "katsu"
+    }
+  ],
+  "notes": [
+    {
+      "id": "1",
+      "content": "HTML is easy",
+      "important": false
+    },
+    {
+      "id": "2",
+      "content": "Browser can execute only JavaScript",
+      "important": false
+    },
+    {
+      "id": "3",
+      "content": "GET and POST are the most important methods of HTTP protocol",
+      "important": true
+    },
+    {
+      "id": "48da",
+      "content": "New note that is imprtant",
+      "important": false
+    },
+    {
+      "id": "9542",
+      "content": "New note that is imprtant",
+      "important": false
+    },
+    {
+      "id": "fe21",
+      "content": "New note that is imprtantw",
+      "important": false
+    },
+    {
+      "id": "7307",
+      "content": "Test new note",
+      "important": false
+    },
+    {
+      "id": "c9a0",
+      "content": "tester",
+      "important": "on"
+    },
+    {
+      "id": "9b0b",
+      "content": "tester",
+      "important": false
+    }
+  ]
+}
