@@ -7,7 +7,7 @@ const Person = ({ person,onDelete  }) => {
         }
     };
     return (
-        <li>{person.name}: {person.number}<button onClick={handleDelete}>Delete</button></li>
+        <li>{person.name}: {person.phone}<button onClick={handleDelete}>Delete</button></li>
     )
 }
 

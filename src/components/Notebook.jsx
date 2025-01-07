@@ -73,7 +73,7 @@ export const Notebook = () => {
         };
         fetchData();
 
-    }, [])
+    }, []);
 
     return (
         <>

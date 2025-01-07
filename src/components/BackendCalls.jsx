@@ -1,5 +1,5 @@
 import axios from "axios";
-const baseUrl = 'http://localhost:3001/api/';
+const baseUrl = '/api/';
 
 export const GetData = async (item) => {
     const url = `${baseUrl}${item}`;
@@ -16,11 +16,12 @@ export const GetData = async (item) => {
 
 export const UpdateData = async (item, data, id) => {
 
-    const url = id ? `http://localhost:3001/${item}/${id}` : `http://localhost:3001/${item}`;
+    const url = id ? `${baseUrl}${item}/${id}` : `${baseUrl}${item}`;
     try{
         const response = id ?
             await axios.put(url,data) :
             await axios.post(url,data);
+            console.log(response);
             return response.data;
 
     } catch (error) {
@@ -32,7 +33,7 @@ export const UpdateData = async (item, data, id) => {
 
 export const DeleteData = async (id,item,updateList) => {
 
-    const url = `http://localhost:3001/${item}/${id}`;
+    const url = `${baseUrl}${item}/${id}`;
     try {
         await axios.delete(url);
         updateList(id);

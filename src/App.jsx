@@ -23,7 +23,7 @@ const App = () => {
     return (
         <div>
             <Notebook/>
-            <WeatherApp/>
+            <Phonebook/>
             <Footer/>
         </div>
     )

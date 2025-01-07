@@ -16,7 +16,7 @@ const Phonebook = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const data = await GetData('persons');
+            const data = await GetData('phonebook');
             if (data) {
                 setPersons(data);
                 console.log(data);
@@ -36,12 +36,12 @@ const Phonebook = () => {
             const matchingRecord =persons.find((person) => person.name === newName);
             const nameObj = {
                 ...matchingRecord,
-                number: newNumber
+                phone: newNumber
 
             }
 
             if (window.confirm(`Are you sure you want to replace the old number for ${matchingRecord.name} with the new one?`)) {
-                const updatedPerson = await UpdateData('persons', nameObj, matchingRecord.id);
+                const updatedPerson = await UpdateData('phonebook', nameObj, matchingRecord.id);
                 if(updatedPerson) {
                     setPersons(persons.map(p => p.id === matchingRecord.id ? updatedPerson : p));
                     setErrorMessage(`Updated ${updatedPerson.name} in the phonebook`);
@@ -53,12 +53,12 @@ const Phonebook = () => {
 
         } else {
             const nameObj = {
-                number: newNumber,
+                phone: newNumber,
                 name: newName,
                 //id: persons.length + 1,
 
             }
-            const addedPerson = await UpdateData('persons', nameObj);
+            const addedPerson = await UpdateData('phonebook', nameObj);
             if(addedPerson){
                 setPersons(persons.concat(addedPerson));
                 setErrorMessage(`Added ${addedPerson.name} to the phonebook`);
@@ -80,7 +80,7 @@ const Phonebook = () => {
 
 
     const handleDelete = async (id) => {
-        await DeleteData(id,'persons', (deletedId) => {
+        await DeleteData(id,'phonebook', (deletedId) => {
             setPersons((prevPeople) => prevPeople.filter(person => person.id !== deletedId));
         });
     };
