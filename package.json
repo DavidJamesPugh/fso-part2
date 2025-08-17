@@ -11,7 +11,7 @@
     "server": "json-server -p3001 --watch db.json",
     "build:ui": "rimraf ..\\fso-part3\\dist && cd ../fso-part2 && npm run build && xcopy dist ..\\fso-part3\\dist /E /I",
 
-    "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push"
+    "deploy:full": "npm run build:ui && git add ."
 
   },
   "dependencies": {

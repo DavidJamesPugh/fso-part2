@@ -19,7 +19,6 @@ const Phonebook = () => {
             const data = await GetData('phonebook');
             if (data) {
                 setPersons(data);
-                console.log(data);
             }
         };
         fetchData();
@@ -58,11 +57,18 @@ const Phonebook = () => {
                 //id: persons.length + 1,
 
             }
-            const addedPerson = await UpdateData('phonebook', nameObj);
-            if(addedPerson){
+            try {
+                const addedPerson = await UpdateData('phonebook', nameObj);
                 setPersons(persons.concat(addedPerson));
                 setErrorMessage(`Added ${addedPerson.name} to the phonebook`);
-                setTimeout(() => { setErrorMessage(null)}, 4500);
+                setTimeout(() => {
+                    setErrorMessage(null)
+                }, 4500);
+            } catch (error) {
+                setErrorMessage(`Validation error: ${error.message}`);
+                setTimeout(() => {
+                    setErrorMessage(null);
+                }, 4500);
             }
             //alert('${newName} is already added to the phonebook')
 

@@ -3,7 +3,6 @@ const baseUrl = '/api/';
 
 export const GetData = async (item) => {
     const url = `${baseUrl}${item}`;
-    console.log(url);
     try {
         const response = await axios.get(url);
         return response.data;
@@ -21,12 +20,14 @@ export const UpdateData = async (item, data, id) => {
         const response = id ?
             await axios.put(url,data) :
             await axios.post(url,data);
-            console.log(response);
             return response.data;
 
     } catch (error) {
-        alert("Failed to update phonebook");
-        return null;
+        if (error.response && error.response.data && error.response.data.details) {
+            throw new Error(error.response.data.details.join(', ')); // Throw detailed error
+        } else {
+            throw new Error('Failed to update phonebook');
+        }
     }
 
 }
